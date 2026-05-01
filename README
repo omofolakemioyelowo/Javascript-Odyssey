@@ -1,0 +1,82 @@
+# JavaScript Odyssey – A Five-World Developer Ascension
+
+## Overview
+
+JavaScript Odyssey is a single-page web application designed as a structured learning system that demonstrates core JavaScript concepts through five progressive modules ("Worlds").
+
+Each world focuses on a specific area of JavaScript mastery, from basic logic to DOM manipulation.
+
+---
+
+## What This Project Demonstrates
+
+- Structured problem solving
+- Separation of logic and UI
+- Reusable function design
+- Array and object manipulation
+- DOM interaction and state updates
+- Clean code organization
+
+---
+
+## Application Structure
+
+### World 1 – Foundations
+
+Basic input handling and validation
+
+- Discount Calculator
+- Grade Calculator
+- Password Checker
+
+### World 2 – Logic Kingdom
+
+Pure functions and reusable logic
+
+- Calculator functions
+- Factorial
+- BMI Calculator
+- Leap Year Checker
+
+### World 3 – Array Arena
+
+Array manipulation and iteration
+
+- Sum & Average
+- Sorting
+- Filtering
+- Duplicate removal
+
+### World 4 – Object City
+
+Object-based data modeling
+
+- Contact Book
+- Shopping Cart Simulator
+- Student Object System
+
+### World 5 – DOM Dimension
+
+Interactive browser features
+
+- Todo App
+- Modal System
+- Form Validation
+- Live Counters
+
+---
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- Vanilla JavaScript (No frameworks)
+
+---
+
+## Key Engineering Decisions
+
+- Logic is separated from DOM manipulation
+- Modular file structure for scalability
+- Reusable utility functions
+- Event-driven architecture
