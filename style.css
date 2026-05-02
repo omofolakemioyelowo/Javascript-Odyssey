@@ -194,10 +194,8 @@ body {
 .tools-mid,
 .tools-down {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 .card {
@@ -212,7 +210,7 @@ body {
   gap: 24px;
 }
 .discount {
-  width: 800px;
+  width: 100%;
   height: auto;
 }
 .tools {
@@ -330,7 +328,7 @@ body {
 .interest,
 .leap-year,
 .age {
-  width: 800px;
+  width: 100%;
   height: 550px;
 }
 .basic-cal-input,
@@ -423,7 +421,7 @@ body {
 .occur,
 .filter-even,
 .merge {
-  width: 800px;
+  width: 100%;
   height: 250px;
 }
 .array-btn {
@@ -448,7 +446,7 @@ body {
 .json-formatter,
 .shopping-cart,
 .object-key {
-  width: 800px;
+  width: 100%;
   height: 550px;
 }
 .input4:focus {
@@ -551,12 +549,12 @@ body {
 .click-counter,
 .character-counter,
 .modal {
-  width: 800px;
+  width: 100%;
   height: 400px;
 }
 .form-valid,
 .todo {
-  width: 800px;
+  width: 100%;
   height: 500px;
 }
 
@@ -647,7 +645,7 @@ body {
   background-color: var(--world5-active);
 }
 .modal-window {
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -746,4 +744,30 @@ body {
   opacity: 0.8;
   cursor: pointer;
   filter: invert(1) brightness(2);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navigation button {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .world-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .tools-up,
+  .tools-mid,
+  .tools-down {
+    grid-template-columns: 1fr;
+  }
 }
