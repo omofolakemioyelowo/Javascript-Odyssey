@@ -10,7 +10,7 @@
   /* World 1 – Foundations */
   --world1-primary: #5b8def; /* Soft Blue */
   --world1-hover: #486fc7; /* Slightly darker */
-  -world1-disabled: #3a4a63; /* Muted for disabled buttons */
+  --world1-disabled: #3a4a63; /* Muted for disabled buttons */
   --world1-text: #f0f0f0; /* Button text */
 
   /* World 2 – Logic Kingdom */
@@ -49,11 +49,13 @@
   --color-error: #f87171;
   --color-warning: #fbbf24;
 
+  /* Glass Background */
   --color-bg-success: rgba(34, 197, 94, 0.12);
   --color-bg-error: rgba(239, 68, 68, 0.12);
   --color-bg-warning: rgba(250, 204, 21, 0.12);
   --color-bg-info: rgba(96, 165, 250, 0.12);
 
+  /* Shadow */
   --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -63,10 +65,9 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
 body {
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   background-color: var(--bg-main);
   color: var(--text-main);
   display: flex;
@@ -75,9 +76,7 @@ body {
   align-items: start;
   gap: 24px;
   padding: 36px;
-  overflow-x: hidden;
 }
-
 .app-header {
   width: 100%;
   display: flex;
@@ -89,24 +88,19 @@ body {
   gap: 16px;
   border-bottom: 1px solid var(--border-light);
 }
-
 .app-header h1 {
   font-size: 2.5rem;
 }
-
 .app-header .subtitle {
   font-size: 1.2rem;
   color: var(--text-muted);
 }
-
 .navigation {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   gap: 24px;
   border-bottom: 1px solid var(--border-light);
 }
-
 .navigation button {
   padding: 12px 24px;
   border: none;
@@ -122,7 +116,6 @@ body {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
-
 .navigation button:hover {
   color: var(--text-main);
 }
@@ -131,36 +124,28 @@ body {
   color: var(--world1-primary);
   border-bottom: 4px solid var(--world1-primary);
 }
-
 .navigation button.world2.active {
   color: var(--world2-primary);
   border-bottom: 4px solid var(--world2-primary);
 }
-
 .navigation button.world3.active {
   color: var(--world3-primary);
   border-bottom: 4px solid var(--world3-primary);
 }
-
 .navigation button.world4.active {
   color: var(--world4-primary);
   border-bottom: 4px solid var(--world4-primary);
 }
-
 .navigation button.world5.active {
   color: var(--world5-primary);
   border-bottom: 4px solid var(--world5-primary);
 }
-
 .world {
   display: none;
-  width: 100%;
 }
-
 .world.active {
   display: block;
 }
-
 .world-header {
   width: 100%;
   display: flex;
@@ -169,7 +154,6 @@ body {
   gap: 8px;
   margin-bottom: 24px;
 }
-
 .world-header h2 {
   font-size: 2rem;
   display: flex;
@@ -177,57 +161,45 @@ body {
   align-items: center;
   gap: 8px;
 }
-
 .world-header .icon {
   font-size: 2.5rem;
 }
-
 .world-header p {
   font-size: 1.2rem;
   color: var(--text-muted);
 }
-
 .found {
   color: var(--world1-primary);
 }
-
 .logic {
   color: var(--world2-primary);
 }
-
 .array {
   color: var(--world3-primary);
 }
-
 .object {
   color: var(--world4-primary);
 }
-
 .dom {
   color: var(--world5-primary);
 }
-
 .tools {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 24px;
 }
-
 .tools-up,
 .tools-mid,
 .tools-down {
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: start;
   align-items: start;
   gap: 24px;
 }
-
 .card {
   background-color: var(--bg-card);
   border: 2px solid var(--border-light);
@@ -239,56 +211,13 @@ body {
   align-items: start;
   gap: 24px;
 }
-
-/* Fixed width correction for all tool cards */
-.discount,
-.basic-cal,
-.factorial-cal,
-.bmi,
-.interest,
-.leap-year,
-.age,
-.sum,
-.average,
-.max,
-.dup,
-.sort-acend,
-.sort-descend,
-.occur,
-.filter-even,
-.merge,
-.student-grade,
-.contact-book,
-.json-formatter,
-.shopping-cart,
-.object-key,
-.click-counter,
-.character-counter,
-.modal,
-.form-valid,
-.todo {
-  width: 100%;
-  max-width: 800px;
+.discount {
+  width: 800px;
   height: auto;
 }
-
-/* Height specific overrides for complex tools where needed */
-.basic-cal,
-.factorial-cal,
-.bmi,
-.interest,
-.leap-year,
-.age,
-.student-grade,
-.contact-book,
-.json-formatter,
-.shopping-cart,
-.object-key,
-.form-valid,
-.todo {
-  min-height: 500px;
+.tools {
+  width: 100%;
 }
-
 .tool-body {
   width: 100%;
   display: flex;
@@ -297,38 +226,31 @@ body {
   align-items: start;
   gap: 16px;
 }
-
 .tool-title {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .tool-title h3 {
   font-size: 1.5rem;
 }
-
 .tool-title p {
   font-size: 1rem;
   color: var(--text-muted);
 }
-
 .discount-input {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
 .group {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 8px;
 }
-
 .group input {
   width: 100%;
   padding: 16px 12px;
@@ -339,12 +261,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .input1:focus {
   outline: none;
   border-color: var(--world1-hover);
 }
-
 .primary-btn {
   padding: 16px 12px;
   border: none;
@@ -354,7 +274,6 @@ body {
   color: var(--text-main);
   cursor: pointer;
 }
-
 .btn1 {
   width: 100%;
   background-color: var(--world1-disabled);
@@ -362,15 +281,16 @@ body {
   transition: 0.2s ease;
 }
 
+/* When button is ENABLED */
 .btn1:not(:disabled) {
   background-color: var(--world1-primary);
   cursor: pointer;
 }
 
+/* Hover only when enabled */
 .btn1:not(:disabled):hover {
   background-color: var(--world1-hover);
 }
-
 .result {
   width: 100%;
   margin-top: 6px;
@@ -381,7 +301,6 @@ body {
   outline: none;
   border: none;
 }
-
 .result.success {
   background-color: var(--color-bg-success);
   border: 1px solid var(--color-border-success);
@@ -405,7 +324,15 @@ body {
   border: 1px solid var(--color-border-info);
   color: var(--color-info);
 }
-
+.basic-cal,
+.factorial-cal,
+.bmi,
+.interest,
+.leap-year,
+.age {
+  width: 800px;
+  height: 550px;
+}
 .basic-cal-input,
 .factorial-cal-input,
 .bmi-input,
@@ -414,17 +341,14 @@ body {
 .age-input {
   width: 100%;
 }
-
 #leap-year-calculate,
 #age-calculate {
   margin-top: 24px;
 }
-
 .input2:focus {
   outline: none;
   border-color: var(--world2-hover);
 }
-
 .basic-cal-btn {
   width: 100%;
   display: flex;
@@ -433,7 +357,6 @@ body {
   align-items: start;
   gap: 16px;
 }
-
 .logic-btn {
   width: 100%;
   background-color: var(--world2-disabled);
@@ -441,19 +364,19 @@ body {
   transition: 0.2s ease;
 }
 
+/* When button is ENABLED */
 .logic-btn:not(:disabled) {
   background-color: var(--world2-primary);
   cursor: pointer;
 }
 
+/* Hover only when enabled */
 .logic-btn:not(:disabled):hover {
   background-color: var(--world2-hover);
 }
-
 .sign {
   font-size: 24px;
 }
-
 .basic-cal-input,
 .factorial-group,
 .bmi-input,
@@ -476,70 +399,84 @@ body {
   border: 2px solid var(--border-light);
   border-radius: 8px;
 }
-
 .input3:focus {
   outline: none;
   border-color: var(--world3-hover);
 }
-
+.group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
 .group label {
   font-size: 1rem;
   font-weight: 600;
 }
-
+.sum,
+.average,
+.max,
+.dup,
+.sort-acend,
+.sort-descend,
+.occur,
+.filter-even,
+.merge {
+  width: 800px;
+  height: 250px;
+}
 .array-btn {
   width: 100%;
   background-color: var(--world3-disabled);
   font-size: 1rem;
 }
-
 .array-btn:hover {
   background-color: var(--world3-hover);
 }
-
 .array-btn:active {
   background-color: var(--world3-active);
 }
-
 .body {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
+.student-grade,
+.contact-book,
+.json-formatter,
+.shopping-cart,
+.object-key {
+  width: 800px;
+  height: 550px;
+}
 .input4:focus {
   outline: none;
   border-color: var(--world4-hover);
 }
-
 .object-btn {
   width: 100%;
   background-color: var(--world4-disabled);
   font-size: 1rem;
 }
-
 .object-btn:hover {
   background-color: var(--world4-hover);
 }
-
 .object-btn:active {
   background-color: var(--world4-active);
 }
-
 .field {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
 .field label {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 8px;
 }
-
 .quantity-control {
   display: flex;
   flex-direction: row;
@@ -548,7 +485,6 @@ body {
   overflow: hidden;
   gap: 12px;
 }
-
 .qty-btn {
   width: 48px;
   height: 48px;
@@ -558,15 +494,12 @@ body {
   font-size: 24px;
   color: var(--text-main);
 }
-
 .qty-btn:hover {
   background-color: var(--world4-hover);
 }
-
 .qty-btn:active {
   background-color: var(--world4-active);
 }
-
 .qty-input {
   width: 50px;
   height: 48px;
@@ -579,12 +512,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .qty-input:focus {
   outline: none;
   border-color: var(--world4-hover);
 }
-
 .group textarea {
   width: 100%;
   height: 200px;
@@ -596,12 +527,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .group textarea:focus {
   outline: none;
   border-color: var(--world4-hover);
 }
-
 .group select {
   width: 100%;
   padding: 16px 12px;
@@ -612,14 +541,23 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .group select:focus {
   outline: none;
   border-color: var(--world4-hover);
 }
-
 .group select option {
   color: var(--text-main);
+}
+.click-counter,
+.character-counter,
+.modal {
+  width: 800px;
+  height: 400px;
+}
+.form-valid,
+.todo {
+  width: 800px;
+  height: 500px;
 }
 
 .char-result {
@@ -630,18 +568,15 @@ body {
   align-items: start;
   gap: 12px;
 }
-
 #char-count,
 #word-count {
   color: var(--world5-primary);
   font-size: 20px;
   font-weight: 600;
 }
-
 .password-wrapper {
   width: 100%;
 }
-
 .counter {
   display: flex;
   flex-direction: column;
@@ -649,13 +584,11 @@ body {
   align-items: center;
   gap: 24px;
 }
-
 .counter-value {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 24px;
 }
-
 .button-group {
   width: 100%;
   display: flex;
@@ -664,7 +597,6 @@ body {
   align-items: center;
   gap: 12px;
 }
-
 .btn {
   width: 100%;
   padding: 12px 24px;
@@ -676,15 +608,12 @@ body {
   background-color: var(--world5-disabled);
   cursor: pointer;
 }
-
 .btn:hover {
   background-color: var(--world5-hover);
 }
-
 .btn:active {
   background-color: var(--world5-active);
 }
-
 .modal-form input {
   width: 100%;
   padding: 16px 12px;
@@ -695,12 +624,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .modal-form input:focus {
   outline: none;
   border-color: var(--world5-hover);
 }
-
 .dom-btn {
   width: 100%;
   background-color: var(--world5-disabled);
@@ -713,18 +640,14 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
-
 .dom-btn:hover {
   background-color: var(--world5-hover);
 }
-
 .dom-btn:active {
   background-color: var(--world5-active);
 }
-
 .modal-window {
-  width: 100%;
-  max-width: 800px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -736,12 +659,10 @@ body {
   font-size: 1rem;
   color: var(--text-main);
 }
-
 .character-counter textarea:focus {
   outline: none;
   border-color: var(--world5-hover);
 }
-
 .modal-form textarea {
   width: 100%;
   padding: 16px 12px;
@@ -752,12 +673,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .modal-form textarea:focus {
   outline: none;
   border-color: var(--world5-hover);
 }
-
 .modal-title {
   width: 100%;
   display: flex;
@@ -768,7 +687,6 @@ body {
   border-bottom: 2px solid var(--border-light);
   padding-bottom: 12px;
 }
-
 .close-modal {
   background-color: transparent;
   color: var(--world5-active);
@@ -776,7 +694,6 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 .modal-form {
   width: 100%;
   display: flex;
@@ -792,30 +709,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
-
 .pass-req {
   display: flex;
   flex-direction: column;
   gap: 8px;
   font-size: 14px;
 }
-
 .pass-req p {
   display: flex;
   align-items: center;
   gap: 8px;
   color: #aaa;
 }
-
 .form-group {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .form-group input {
   width: 100%;
   padding: 16px 12px;
@@ -826,12 +738,10 @@ body {
   background-color: var(--bg-main);
   cursor: pointer;
 }
-
 .form-group input:focus {
   outline: none;
   border-color: var(--world5-hover);
 }
-
 .input5::-webkit-calendar-picker-indicator {
   opacity: 0.8;
   cursor: pointer;
