@@ -187,11 +187,12 @@ body {
 .main {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-items: start;
 }
 .world-main {
   width: 100%;
-  max-width: 1680px;
+  max-width: 1440px;
 }
 .tools {
   display: flex;
@@ -202,13 +203,16 @@ body {
 }
 .tools-up,
 .tools-mid,
-.tools-down {
+.tools-down,
+.tools-bottom,
+.tools-extra {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: start;
-  gap: 24px;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 .card {
   background-color: var(--bg-card);
@@ -340,8 +344,10 @@ body {
 .interest,
 .leap-year,
 .age {
-  width: 800px;
+  width: calc(50% - 16px);
+  min-width: 500px;
   height: 550px;
+  flex: 1;
 }
 .basic-cal-input,
 .factorial-cal-input,
@@ -433,8 +439,10 @@ body {
 .occur,
 .filter-even,
 .merge {
-  width: 800px;
+  width: calc(50% - 16px);
+  min-width: 500px;
   height: 250px;
+  flex: 1;
 }
 .array-btn {
   width: 100%;
@@ -458,8 +466,10 @@ body {
 .json-formatter,
 .shopping-cart,
 .object-key {
-  width: 800px;
+  width: calc(50% - 16px);
+  min-width: 500px;
   height: 550px;
+  flex: 1;
 }
 .input4:focus {
   outline: none;
@@ -561,13 +571,17 @@ body {
 .click-counter,
 .character-counter,
 .modal {
-  width: 800px;
+  width: calc(50% - 16px);
+  min-width: 500px;
   height: 400px;
+  flex: 1;
 }
 .form-valid,
 .todo {
-  width: 800px;
+  width: calc(50% - 16px);
+  min-width: 500px;
   height: 500px;
+  flex: 1;
 }
 
 .char-result {
@@ -761,7 +775,9 @@ body {
 @media (max-width: 1700px) {
   .tools-up,
   .tools-mid,
-  .tools-down {
+  .tools-down,
+  .tools-bottom,
+  .tools-extra {
     flex-wrap: wrap;
   }
 }
