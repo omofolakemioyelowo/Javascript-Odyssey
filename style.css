@@ -76,6 +76,7 @@ body {
   align-items: start;
   gap: 24px;
   padding: 36px;
+  overflow-x: hidden;
 }
 .app-header {
   width: 100%;
@@ -183,6 +184,15 @@ body {
 .dom {
   color: var(--world5-primary);
 }
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.world-main {
+  width: 100%;
+  max-width: 1680px;
+}
 .tools {
   display: flex;
   flex-direction: column;
@@ -194,8 +204,10 @@ body {
 .tools-mid,
 .tools-down {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
   gap: 24px;
 }
 .card {
@@ -210,7 +222,7 @@ body {
   gap: 24px;
 }
 .discount {
-  width: 100%;
+  width: 800px;
   height: auto;
 }
 .tools {
@@ -328,7 +340,7 @@ body {
 .interest,
 .leap-year,
 .age {
-  width: 100%;
+  width: 800px;
   height: 550px;
 }
 .basic-cal-input,
@@ -421,7 +433,7 @@ body {
 .occur,
 .filter-even,
 .merge {
-  width: 100%;
+  width: 800px;
   height: 250px;
 }
 .array-btn {
@@ -446,7 +458,7 @@ body {
 .json-formatter,
 .shopping-cart,
 .object-key {
-  width: 100%;
+  width: 800px;
   height: 550px;
 }
 .input4:focus {
@@ -549,12 +561,12 @@ body {
 .click-counter,
 .character-counter,
 .modal {
-  width: 100%;
+  width: 800px;
   height: 400px;
 }
 .form-valid,
 .todo {
-  width: 100%;
+  width: 800px;
   height: 500px;
 }
 
@@ -645,7 +657,7 @@ body {
   background-color: var(--world5-active);
 }
 .modal-window {
-  width: 100%;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -746,9 +758,21 @@ body {
   filter: invert(1) brightness(2);
 }
 
+@media (max-width: 1700px) {
+  .tools-up,
+  .tools-mid,
+  .tools-down {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding: 20px;
+  }
+
+  .world-main {
+    max-width: 100%;
   }
 
   .navigation {
@@ -765,9 +789,37 @@ body {
     font-size: 1.5rem;
   }
 
-  .tools-up,
-  .tools-mid,
-  .tools-down {
-    grid-template-columns: 1fr;
+  .discount,
+  .basic-cal,
+  .factorial-cal,
+  .bmi,
+  .interest,
+  .leap-year,
+  .age,
+  .sum,
+  .average,
+  .max,
+  .dup,
+  .sort-acend,
+  .sort-descend,
+  .occur,
+  .filter-even,
+  .merge,
+  .student-grade,
+  .contact-book,
+  .json-formatter,
+  .shopping-cart,
+  .object-key,
+  .click-counter,
+  .character-counter,
+  .modal,
+  .form-valid,
+  .todo {
+    width: 100%;
+  }
+
+  .modal-window {
+    width: 100%;
+    max-width: 500px;
   }
 }
