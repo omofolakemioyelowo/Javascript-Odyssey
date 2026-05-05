@@ -441,7 +441,7 @@ body {
 .merge {
   width: calc(50% - 16px);
   min-width: 500px;
-  height: 250px;
+  height: 300px;
   flex: 1;
 }
 .array-btn {

@@ -129,11 +129,11 @@ factorialBtn.addEventListener("click", function () {
 
   if (isNaN(factorialNum) || factorialNum < 0) {
     factorialResult.textContent = "Enter a postive number.";
-    return;
     factorialResult.className = "result error";
+    return;
   }
   if (factorialNum > 20) {
-    factorialResult.textContext = "Number too large (max 20).";
+    factorialResult.textContent = "Number too large (max 20).";
     return;
 
     factorialResult.className = "result error";
@@ -291,3 +291,110 @@ votingBtn.addEventListener("click", function () {
 
 // Array Arena
 
+//Sum of Array
+
+function getPrimaryArray() {
+  const raw = document.getElementById("array-input1").value;
+
+  if (raw.trim() === "") {
+    return null;
+  }
+
+  const parsed = raw
+    .split(",")
+    .map(function (val) {
+      return parseFloat(val.trim());
+    })
+    .filter(function (num) {
+      return !isNaN(num);
+    });
+
+  if (parsed.length === 0) {
+    return null;
+  }
+
+  return parsed;
+}
+const sumBtn = document.getElementById("sum-calculate");
+const sumResult = document.getElementById("sum-result");
+
+sumBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+
+  if (arr === null) {
+    sumResult.textContent = "Please enter valid numbers.";
+    sumResult.className = "result error";
+    return;
+  }
+
+  const total = arr.reduce(function (acc, num) {
+    return acc + num;
+  }, 0);
+
+  sumResult.textContent = "Sum: " + total;
+  sumResult.className = "result info";
+});
+
+// Average Calculator
+
+const averageBtn = document.getElementById("average-calculate");
+const averageResult = document.getElementById("average-result");
+
+averageBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+
+  if (arr === null) {
+    averageResult.textContent = "Please enter valid numbers";
+    averageResult.className = "result error";
+    return;
+  }
+  const total = arr.reduce(function (acc, num) {
+    return acc + num;
+  }, 0);
+  const average = total / arr.length;
+  averageResult.textContent = "Average: " + average;
+  averageResult.className = "result info";
+});
+
+// Maximum Array
+
+const maxBtn = document.getElementById("max-calculate");
+const maxResult = document.getElementById("max-result");
+
+maxBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+
+  if (arr === null) {
+    maxResult.textContent = "Please enter valid numbers";
+    maxResult.className = "result error";
+    return;
+  }
+  const maximum = arr.reduce(function (acc, num) {
+    if (num > acc) return num;
+    else return acc;
+  });
+  maxResult.textContent = "Maximum: " + maximum;
+  maxResult.className = "result info";
+});
+
+// Remove Duplicates
+
+const duplicateBtn = document.getElementById("dup-calculate");
+const duplicateResult = document.getElementById("dup-result");
+
+duplicateBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+
+  if (arr === null) {
+    duplicateResult.textContent = "Please enter valid numbers";
+    duplicateResult.className = "result error";
+    return;
+  }
+
+  const unique = arr.filter(function (num, index) {
+    return arr.indexOf(num) === index;
+  });
+
+  duplicateResult.textContent = "[" + unique.join(", ") + "]";
+  duplicateResult.className = "result info";
+});
