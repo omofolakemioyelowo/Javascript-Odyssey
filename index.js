@@ -190,7 +190,7 @@ bmiBtn.addEventListener("click", function () {
   bmiResult.className = "result info";
 });
 
-// Interest calcukator
+// Interest calculator
 const price = document.getElementById("interest-input1");
 const rateInterest = document.getElementById("interest-input2");
 const years = document.getElementById("interest-input3");
@@ -397,4 +397,126 @@ duplicateBtn.addEventListener("click", function () {
 
   duplicateResult.textContent = "[" + unique.join(", ") + "]";
   duplicateResult.className = "result info";
+});
+
+// Sort Acending
+
+const acendBtn = document.getElementById("sort-acend-calculate");
+const acendResult = document.getElementById("sort-acend-result");
+
+acendBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+  if (arr === null) {
+    acendResult.textContent = "Please enter valid numbers";
+    acendResult.className = "result error";
+    return;
+  }
+  const acend = arr.sort(function (a, b) {
+    return a - b;
+  });
+  acendResult.textContent = "Acending: [" + acend.join(", ") + "]";
+  acendResult.className = "result info";
+});
+
+// Sort Decending
+
+const descendBtn = document.getElementById("sort-descend-calculate");
+const descendResult = document.getElementById("sort-descend-result");
+
+descendBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+  if (arr === null) {
+    descendResult.textContent = "Please enter valid numbers";
+    descendResult.className = "result error";
+    return;
+  }
+
+  const descend = arr.sort(function (a, b) {
+    return b - a;
+  });
+  descendResult.textContent = "Descending: [" + descend.join(", ") + "]";
+  descendResult.className = "result info";
+});
+
+// Count Occurrences
+
+const countBtn = document.getElementById("occur-calculate");
+const countResult = document.getElementById("occur-result");
+
+countBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+  if (arr === null) {
+    countResult.textContent = "Please enter valid numbers";
+    countResult.className = "result error";
+    return;
+  }
+
+  const countNum = {};
+  arr.forEach(function (num) {
+    if (countNum[num]) {
+      countNum[num] = countNum[num] + 1;
+    } else {
+      countNum[num] = 1;
+    }
+  });
+  countResult.textContent = JSON.stringify(countNum);
+  countResult.className = "result info";
+});
+
+// Filter Even Numbers
+
+const evenBtn = document.getElementById("filter-even-calculate");
+const evenResult = document.getElementById("filter-even-result");
+
+evenBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+  if (arr === null) {
+    evenResult.textContent = "Please enter valid numbers";
+    evenResult.className = "result error";
+    return;
+  }
+  const even = arr.filter(function (number) {
+    return number % 2 === 0;
+  });
+  evenResult.textContent = "Even Numbers: [" + even.join(",") + "]";
+  evenResult.className = "result info";
+});
+
+// Merge Arrays
+
+const mergeBtn = document.getElementById("merge-calculate");
+const mergeResult = document.getElementById("merge-result");
+
+function getSecondaryArray() {
+  const raw = document.getElementById("array-input2").value;
+  if (raw.trim() === "") {
+    return null;
+  }
+
+  const parsed = raw
+    .split(", ")
+    .map(function (val) {
+      return parseFloat(val.trim());
+    })
+    .filter(function (num) {
+      return !isNaN(num);
+    });
+  if (parsed.length === 0) {
+    return null;
+  }
+  return parsed;
+}
+
+mergeBtn.addEventListener("click", function () {
+  const arr = getPrimaryArray();
+  const arr2 = getSecondaryArray();
+
+  if (arr === null || arr2 === null) {
+    mergeResult.textContent = "Please enter valid numbers";
+    mergeResult.className = "result error";
+    return;
+  }
+  const merged = arr.concat(arr2);
+  mergeResult.textContent = "Merged: " + "[" + merged.join(",") + "]";
+  mergeResult.className = "result info";
 });
