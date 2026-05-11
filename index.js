@@ -520,3 +520,78 @@ mergeBtn.addEventListener("click", function () {
   mergeResult.textContent = "Merged: " + "[" + merged.join(",") + "]";
   mergeResult.className = "result info";
 });
+
+// Object City
+
+// Student Grade
+
+const studentName = document.getElementById("student-grade-input1");
+const firstScore = document.getElementById("first-score");
+const secondScore = document.getElementById("second-score");
+const examScore = document.getElementById("exam-score");
+const gradeBtn = document.getElementById("student-grade-calculate");
+const gradeResult = document.getElementById("student-grade-result");
+
+gradeBtn.addEventListener("click", function () {
+  const name = studentName.value.trim();
+  const grade =
+    parseFloat(firstScore.value.trim()) +
+    parseFloat(secondScore.value.trim()) +
+    parseFloat(examScore.value.trim());
+
+  if (name === "" || isNaN(grade)) {
+    gradeResult.textContent = "Please enter a valid name and numeric grade.";
+    gradeResult.className = "result error";
+    return;
+  }
+
+  if (grade >= 90) {
+    gradeResult.textContent = `${name} scored ${grade} and got an A`;
+    gradeResult.className = "result success";
+  } else if (grade >= 80) {
+    gradeResult.textContent = `${name} scored ${grade} and got a B`;
+    gradeResult.className = "result success";
+  } else if (grade >= 70) {
+    gradeResult.textContent = `${name} scored ${grade} and got a C`;
+    gradeResult.className = "result success";
+  } else if (grade >= 60) {
+    gradeResult.textContent = `${name} scored ${grade} and got a D`;
+    gradeResult.className = "result warning";
+  } else {
+    gradeResult.textContent = `${name} scored ${grade} and got an F`;
+    gradeResult.className = "result error";
+  }
+});
+
+// Contact Book
+
+const contactName = document.getElementById("contact-name");
+const contactNumber = document.getElementById("contact-number");
+const contactEmail = document.getElementById("contact-email");
+const contactBtn = document.getElementById("contact-book-calculate");
+const contactResult = document.getElementById("contact-book-result");
+
+contactBtn.addEventListener("click", function () {
+  const name = contactName.value.trim();
+  const number = contactNumber.value.trim();
+  const email = contactEmail.value.trim();
+
+  if (name === "" || number === "" || email === "") {
+    contactResult.textContent = "Please enter all the fields";
+    contactResult.className = "result error";
+    return;
+  }
+  const contact = {
+    name: name,
+    number: number,
+    email: email,
+  };
+  contactResult.textContent =
+    "Name: " +
+    contact.name +
+    "Number: " +
+    contact.number +
+    "Email: " +
+    contact.email;
+  contactResult.className = "result info";
+});
